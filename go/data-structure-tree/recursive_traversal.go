@@ -2,15 +2,10 @@ package main
 
 import (
 	"fmt"
+	"leetcode/common"
 )
 
-type TreeNode struct {
-	Val   string
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func preorderTraversal(root *TreeNode) []string {
+func preorderTraversal(root *common.TreeNode) []string {
 	fmt.Println(root.Val)
 	if root.Left != nil {
 		preorderTraversal(root.Left)
@@ -21,7 +16,7 @@ func preorderTraversal(root *TreeNode) []string {
 	return []string{}
 }
 
-func postorderTraversal(root *TreeNode) []string {
+func postorderTraversal(root *common.TreeNode) []string {
 	if root.Left != nil {
 		postorderTraversal(root.Left)
 	}
@@ -32,7 +27,7 @@ func postorderTraversal(root *TreeNode) []string {
 	return []string{}
 }
 
-func inorderTraversal(root *TreeNode) []string {
+func inorderTraversal(root *common.TreeNode) []string {
 	if root.Left != nil {
 		inorderTraversal(root.Left)
 	}
@@ -44,28 +39,28 @@ func inorderTraversal(root *TreeNode) []string {
 }
 
 func main() {
-	tree := TreeNode{
+	tree := common.TreeNode{
 		Val: "F",
-		Left: &TreeNode{
+		Left: &common.TreeNode{
 			Val: "B",
-			Left: &TreeNode{
+			Left: &common.TreeNode{
 				Val: "A",
 			},
-			Right: &TreeNode{
+			Right: &common.TreeNode{
 				Val: "D",
-				Left: &TreeNode{
+				Left: &common.TreeNode{
 					Val: "C",
 				},
-				Right: &TreeNode{
+				Right: &common.TreeNode{
 					Val: "E",
 				},
 			},
 		},
-		Right: &TreeNode{
+		Right: &common.TreeNode{
 			Val: "G",
-			Right: &TreeNode{
+			Right: &common.TreeNode{
 				Val: "I",
-				Left: &TreeNode{
+				Left: &common.TreeNode{
 					Val: "H",
 				},
 			},
